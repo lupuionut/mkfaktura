@@ -30,8 +30,16 @@ int main(int argc, char *argv[])
         GTK_ENTRY(gtk_builder_get_object(builder, "input_product2_vat_value"));
     input_product2_brutto =
         GTK_ENTRY(gtk_builder_get_object(builder, "input_product2_brutto"));
+    input_total_netto =
+        GTK_ENTRY(gtk_builder_get_object(builder, "input_total_netto"));
+    input_total_vat_value =
+        GTK_ENTRY(gtk_builder_get_object(builder, "input_total_vat_value"));
+    input_total_brutto =
+        GTK_ENTRY(gtk_builder_get_object(builder, "input_total_brutto"));
+     input_total =
+        GTK_ENTRY(gtk_builder_get_object(builder, "input_total"));
 
-    g_signal_connect (window, "destroy",
+     g_signal_connect (window, "destroy",
                   G_CALLBACK (destroy), NULL);
 
     g_object_unref(builder);
@@ -61,6 +69,7 @@ void on_input_product1_net_changed
     total = netto * qty;
     snprintf(totals,sizeof(totals), "%.2f", total);
     gtk_entry_set_text(input_product1_netto, totals);
+    free(pnet);free(pqt);
 }
 
 void on_input_product1_qty_changed
@@ -77,6 +86,9 @@ void on_input_product1_netto_changed
     float vat_rate_float, total_float, vat_float, netto_float;
     char total[50];
     char vat[50];
+    char total_netto[50];
+    char total_vat_value[50];
+    char total_brutto[50];
 
     vat_rate = gtk_entry_get_text(input_product1_vat_rate);
     netto = gtk_editable_get_chars(input_product1_netto, 0, -1);
@@ -87,12 +99,22 @@ void on_input_product1_netto_changed
 
     vat_rate_float = atof(vat_rate);
     netto_float = atof(netto);
+    total_netto_1 = netto_float;
     vat_float = netto_float * vat_rate_float / 100;
+    total_vat_1 = vat_float;
     total_float = netto_float + vat_float;
+    total_brutto_1 = total_float;
     snprintf(vat, sizeof(total), "%.2f", vat_float);
     snprintf(total, sizeof(total), "%.2f", total_float);
+    snprintf(total_netto, sizeof(total_netto), "%.2f", total_netto_1 + total_netto_2);
+    snprintf(total_vat_value, sizeof(total_vat_value), "%.2f", total_vat_1 + total_vat_2);
+    snprintf(total_brutto, sizeof(total_brutto), "%.2f", total_brutto_1 + total_brutto_2);
     gtk_entry_set_text(input_product1_vat_value, vat);
     gtk_entry_set_text(input_product1_brutto, total);
+    gtk_entry_set_text(input_total_netto, total_netto);
+    gtk_entry_set_text(input_total_vat_value, total_vat_value);
+    gtk_entry_set_text(input_total_brutto, total_brutto);
+    gtk_entry_set_text(input_total, total_brutto);
 }
 
 void on_input_product1_vat_rate_changed
@@ -133,6 +155,9 @@ void on_input_product2_netto_changed
     float vat_rate_float, total_float, vat_float, netto_float;
     char total[50];
     char vat[50];
+    char total_netto[50];
+    char total_vat_value[50];
+    char total_brutto[50];
 
     vat_rate = gtk_entry_get_text(input_product2_vat_rate);
     netto = gtk_editable_get_chars(input_product2_netto, 0, -1);
@@ -143,12 +168,22 @@ void on_input_product2_netto_changed
 
     vat_rate_float = atof(vat_rate);
     netto_float = atof(netto);
+    total_netto_2 = netto_float;
     vat_float = netto_float * vat_rate_float / 100;
+    total_vat_2 = vat_float;
     total_float = netto_float + vat_float;
+    total_brutto_2 = total_float;
     snprintf(vat, sizeof(total), "%.2f", vat_float);
     snprintf(total, sizeof(total), "%.2f", total_float);
+    snprintf(total_netto, sizeof(total_netto), "%.2f", total_netto_1 + total_netto_2);
+    snprintf(total_vat_value, sizeof(total_vat_value), "%.2f", total_vat_1 + total_vat_2);
+    snprintf(total_brutto, sizeof(total_brutto), "%.2f", total_brutto_1 + total_brutto_2);
     gtk_entry_set_text(input_product2_vat_value, vat);
     gtk_entry_set_text(input_product2_brutto, total);
+    gtk_entry_set_text(input_total_netto, total_netto);
+    gtk_entry_set_text(input_total_vat_value, total_vat_value);
+    gtk_entry_set_text(input_total_brutto, total_brutto);
+    gtk_entry_set_text(input_total, total_brutto);
 }
 
 void on_input_product2_vat_rate_changed
