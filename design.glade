@@ -952,7 +952,7 @@
                       <packing>
                         <property name="left_attach">0</property>
                         <property name="top_attach">4</property>
-                        <property name="width">7</property>
+                        <property name="width">6</property>
                       </packing>
                     </child>
                     <child>
@@ -1216,23 +1216,6 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkEntry" id="input_total">
-                        <property name="name">input_total</property>
-                        <property name="visible">True</property>
-                        <property name="can_focus">True</property>
-                        <property name="margin_left">5</property>
-                        <property name="margin_right">5</property>
-                        <property name="margin_top">5</property>
-                        <property name="margin_bottom">5</property>
-                        <property name="editable">False</property>
-                        <property name="width_chars">7</property>
-                      </object>
-                      <packing>
-                        <property name="left_attach">7</property>
-                        <property name="top_attach">4</property>
-                      </packing>
-                    </child>
-                    <child>
                       <object class="GtkEntry" id="input_total_vat_rate">
                         <property name="name">input_total_vat_rate</property>
                         <property name="visible">True</property>
@@ -1249,6 +1232,23 @@
                       <packing>
                         <property name="left_attach">5</property>
                         <property name="top_attach">3</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkEntry" id="input_total">
+                        <property name="name">input_total</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="margin_left">5</property>
+                        <property name="margin_right">5</property>
+                        <property name="margin_top">5</property>
+                        <property name="margin_bottom">5</property>
+                        <property name="editable">False</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">6</property>
+                        <property name="top_attach">4</property>
+                        <property name="width">2</property>
                       </packing>
                     </child>
                   </object>
