@@ -17,7 +17,7 @@
         <property name="visible">True</property>
         <property name="can_focus">True</property>
         <property name="shadow_type">in</property>
-        <property name="max_content_width">850</property>
+        <property name="max_content_width">750</property>
         <property name="max_content_height">900</property>
         <child>
           <object class="GtkViewport">
@@ -232,6 +232,7 @@
                         <property name="margin_right">10</property>
                         <property name="margin_top">10</property>
                         <property name="margin_bottom">10</property>
+                        <property name="hexpand">True</property>
                         <property name="label" translatable="yes">Sprzedawca</property>
                         <attributes>
                           <attribute name="font-desc" value="Sans 16"/>
@@ -254,6 +255,7 @@
                         <property name="margin_right">10</property>
                         <property name="margin_top">10</property>
                         <property name="margin_bottom">10</property>
+                        <property name="hexpand">True</property>
                         <property name="label" translatable="yes">Nabywca</property>
                         <attributes>
                           <attribute name="font-desc" value="Sans 16"/>
@@ -692,6 +694,7 @@
                     <property name="margin_top">30</property>
                     <property name="margin_bottom">20</property>
                     <property name="border_width">5</property>
+                    <property name="column_spacing">10</property>
                     <property name="row_homogeneous">True</property>
                     <child>
                       <object class="GtkLabel" id="lbl_table_product">
@@ -700,7 +703,6 @@
                         <property name="can_focus">False</property>
                         <property name="margin_top">5</property>
                         <property name="margin_bottom">5</property>
-                        <property name="hexpand">True</property>
                         <property name="label" translatable="yes">Product</property>
                         <attributes>
                           <attribute name="weight" value="semibold"/>
@@ -716,7 +718,6 @@
                         <property name="name">lbl_table_measure</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="hexpand">True</property>
                         <property name="label" translatable="yes">Measure</property>
                         <attributes>
                           <attribute name="weight" value="semibold"/>
@@ -732,7 +733,7 @@
                         <property name="name">lbl_table_qty</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="hexpand">True</property>
+                        <property name="hexpand">False</property>
                         <property name="label" translatable="yes">Qty</property>
                         <attributes>
                           <attribute name="weight" value="semibold"/>
@@ -748,7 +749,7 @@
                         <property name="name">lbl_table_net</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="hexpand">True</property>
+                        <property name="hexpand">False</property>
                         <property name="label" translatable="yes">Net price</property>
                         <attributes>
                           <attribute name="weight" value="semibold"/>
@@ -764,7 +765,7 @@
                         <property name="name">lbl_table_net_total</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="hexpand">True</property>
+                        <property name="hexpand">False</property>
                         <property name="label" translatable="yes">Netto</property>
                         <attributes>
                           <attribute name="weight" value="semibold"/>
@@ -780,7 +781,7 @@
                         <property name="name">lbl_table_vat_rate</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="hexpand">True</property>
+                        <property name="hexpand">False</property>
                         <property name="label" translatable="yes">VAT Rate</property>
                         <attributes>
                           <attribute name="weight" value="semibold"/>
@@ -796,7 +797,7 @@
                         <property name="name">lbl_table_vat_value</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="hexpand">True</property>
+                        <property name="hexpand">False</property>
                         <property name="label" translatable="yes">VAT Value</property>
                         <attributes>
                           <attribute name="weight" value="semibold"/>
@@ -831,7 +832,7 @@
                         <property name="margin_right">5</property>
                         <property name="margin_top">5</property>
                         <property name="margin_bottom">5</property>
-                        <property name="hexpand">True</property>
+                        <property name="width_chars">44</property>
                       </object>
                       <packing>
                         <property name="left_attach">0</property>
@@ -843,11 +844,13 @@
                         <property name="name">input_product1_net</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
+                        <property name="halign">center</property>
+                        <property name="valign">center</property>
                         <property name="margin_left">5</property>
                         <property name="margin_right">5</property>
                         <property name="margin_top">5</property>
                         <property name="margin_bottom">5</property>
-                        <property name="width_chars">3</property>
+                        <property name="width_chars">7</property>
                         <signal name="changed" handler="on_input_product1_net_changed" object="input_product1_qty" swapped="no"/>
                       </object>
                       <packing>
@@ -860,12 +863,15 @@
                         <property name="name">input_product1_vat_rate</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
+                        <property name="halign">center</property>
                         <property name="margin_left">5</property>
                         <property name="margin_right">5</property>
                         <property name="margin_top">5</property>
                         <property name="margin_bottom">5</property>
                         <property name="hexpand">False</property>
-                        <property name="width_chars">3</property>
+                        <property name="width_chars">7</property>
+                        <property name="text" translatable="yes">0</property>
+                        <signal name="changed" handler="on_input_product1_vat_rate_changed" object="input_product1_netto" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">5</property>
@@ -877,11 +883,13 @@
                         <property name="name">input_product1_qty</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
+                        <property name="halign">center</property>
+                        <property name="valign">center</property>
                         <property name="margin_left">5</property>
                         <property name="margin_right">5</property>
                         <property name="margin_top">5</property>
                         <property name="margin_bottom">5</property>
-                        <property name="hexpand">True</property>
+                        <property name="hexpand">False</property>
                         <property name="active">0</property>
                         <items>
                           <item translatable="yes">1</item>
@@ -914,60 +922,6 @@
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
-                        <property name="top_attach">1</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkLabel" id="lbl_product1_netto_total">
-                        <property name="name">lbl_product1_netto_total</property>
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="margin_left">5</property>
-                        <property name="margin_right">5</property>
-                        <property name="margin_top">5</property>
-                        <property name="margin_bottom">5</property>
-                        <property name="label" translatable="yes">0</property>
-                        <property name="selectable">True</property>
-                        <property name="width_chars">10</property>
-                      </object>
-                      <packing>
-                        <property name="left_attach">4</property>
-                        <property name="top_attach">1</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkLabel" id="input_product1_vat_total">
-                        <property name="name">input_product1_vat_total</property>
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="margin_left">5</property>
-                        <property name="margin_right">5</property>
-                        <property name="margin_top">5</property>
-                        <property name="margin_bottom">5</property>
-                        <property name="label" translatable="yes">0</property>
-                        <property name="selectable">True</property>
-                        <property name="width_chars">10</property>
-                      </object>
-                      <packing>
-                        <property name="left_attach">6</property>
-                        <property name="top_attach">1</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkLabel" id="input_product1_brutto_total">
-                        <property name="name">input_product1_brutto_total</property>
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="margin_left">5</property>
-                        <property name="margin_right">5</property>
-                        <property name="margin_top">5</property>
-                        <property name="margin_bottom">5</property>
-                        <property name="label" translatable="yes">0</property>
-                        <property name="selectable">True</property>
-                        <property name="width_chars">10</property>
-                      </object>
-                      <packing>
-                        <property name="left_attach">7</property>
                         <property name="top_attach">1</property>
                       </packing>
                     </child>
@@ -1010,7 +964,7 @@
                         <property name="margin_right">5</property>
                         <property name="margin_top">5</property>
                         <property name="margin_bottom">5</property>
-                        <property name="hexpand">True</property>
+                        <property name="width_chars">44</property>
                       </object>
                       <packing>
                         <property name="left_attach">0</property>
@@ -1039,11 +993,13 @@
                         <property name="name">input_product2_qty</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
+                        <property name="halign">center</property>
+                        <property name="valign">center</property>
                         <property name="margin_left">5</property>
                         <property name="margin_right">5</property>
                         <property name="margin_top">5</property>
                         <property name="margin_bottom">5</property>
-                        <property name="hexpand">True</property>
+                        <property name="hexpand">False</property>
                         <property name="active">0</property>
                         <items>
                           <item translatable="yes">1</item>
@@ -1055,6 +1011,7 @@
                           <item translatable="yes">7</item>
                           <item translatable="yes">8</item>
                         </items>
+                        <signal name="changed" handler="on_input_product2_qty_changed" object="input_product2_net" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">2</property>
@@ -1066,32 +1023,17 @@
                         <property name="name">input_product2_net</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
+                        <property name="halign">center</property>
+                        <property name="valign">center</property>
                         <property name="margin_left">5</property>
                         <property name="margin_right">5</property>
                         <property name="margin_top">5</property>
                         <property name="margin_bottom">5</property>
-                        <property name="width_chars">3</property>
+                        <property name="width_chars">7</property>
+                        <signal name="changed" handler="on_input_product2_net_changed" object="input_product2_qty" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">3</property>
-                        <property name="top_attach">2</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkLabel" id="input_product2_netto_total">
-                        <property name="name">input_product2_netto_total</property>
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="margin_left">5</property>
-                        <property name="margin_right">5</property>
-                        <property name="margin_top">5</property>
-                        <property name="margin_bottom">5</property>
-                        <property name="label" translatable="yes">0</property>
-                        <property name="selectable">True</property>
-                        <property name="width_chars">10</property>
-                      </object>
-                      <packing>
-                        <property name="left_attach">4</property>
                         <property name="top_attach">2</property>
                       </packing>
                     </child>
@@ -1100,12 +1042,15 @@
                         <property name="name">input_product2_vat_rate</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
+                        <property name="halign">center</property>
                         <property name="margin_left">5</property>
                         <property name="margin_right">5</property>
                         <property name="margin_top">5</property>
                         <property name="margin_bottom">5</property>
                         <property name="hexpand">False</property>
-                        <property name="width_chars">3</property>
+                        <property name="width_chars">7</property>
+                        <property name="text" translatable="yes">0</property>
+                        <signal name="changed" handler="on_input_product2_vat_rate_changed" object="input_product2_netto" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">5</property>
@@ -1113,17 +1058,67 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkLabel" id="input_product2_vat_total">
-                        <property name="name">input_product2_vat_total</property>
+                      <object class="GtkEntry" id="input_product1_netto">
+                        <property name="name">input_product1_netto</property>
                         <property name="visible">True</property>
-                        <property name="can_focus">False</property>
+                        <property name="can_focus">True</property>
+                        <property name="halign">center</property>
                         <property name="margin_left">5</property>
                         <property name="margin_right">5</property>
                         <property name="margin_top">5</property>
                         <property name="margin_bottom">5</property>
-                        <property name="label" translatable="yes">0</property>
-                        <property name="selectable">True</property>
-                        <property name="width_chars">10</property>
+                        <property name="width_chars">7</property>
+                        <signal name="changed" handler="on_input_product1_netto_changed" object="input_product1_vat_rate" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="left_attach">4</property>
+                        <property name="top_attach">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkEntry" id="input_product2_netto">
+                        <property name="name">input_product2_netto</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="halign">center</property>
+                        <property name="margin_left">5</property>
+                        <property name="margin_right">5</property>
+                        <property name="margin_top">5</property>
+                        <property name="margin_bottom">5</property>
+                        <property name="width_chars">7</property>
+                        <signal name="changed" handler="on_input_product2_netto_changed" object="input_product2_vat_rate" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="left_attach">4</property>
+                        <property name="top_attach">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkEntry" id="input_product1_vat_value">
+                        <property name="name">input_product1_vat_value</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="margin_left">5</property>
+                        <property name="margin_right">5</property>
+                        <property name="margin_top">5</property>
+                        <property name="margin_bottom">5</property>
+                        <property name="width_chars">3</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">6</property>
+                        <property name="top_attach">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkEntry" id="input_product2_vat_value">
+                        <property name="name">input_product2_vat_value</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="margin_left">5</property>
+                        <property name="margin_right">5</property>
+                        <property name="margin_top">5</property>
+                        <property name="margin_bottom">5</property>
+                        <property name="width_chars">3</property>
                       </object>
                       <packing>
                         <property name="left_attach">6</property>
@@ -1131,17 +1126,31 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkLabel" id="input_product2_brutto_total">
-                        <property name="name">input_product2_brutto_total</property>
+                      <object class="GtkEntry" id="input_product1_brutto">
+                        <property name="name">input_product1_brutto</property>
                         <property name="visible">True</property>
-                        <property name="can_focus">False</property>
+                        <property name="can_focus">True</property>
                         <property name="margin_left">5</property>
                         <property name="margin_right">5</property>
                         <property name="margin_top">5</property>
                         <property name="margin_bottom">5</property>
-                        <property name="label" translatable="yes">0</property>
-                        <property name="selectable">True</property>
-                        <property name="width_chars">10</property>
+                        <property name="width_chars">7</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">7</property>
+                        <property name="top_attach">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkEntry" id="input_product2_brutto">
+                        <property name="name">input_product2_brutto</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="margin_left">5</property>
+                        <property name="margin_right">5</property>
+                        <property name="margin_top">5</property>
+                        <property name="margin_bottom">5</property>
+                        <property name="width_chars">7</property>
                       </object>
                       <packing>
                         <property name="left_attach">7</property>
@@ -1149,11 +1158,16 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkLabel" id="lbl_total_netto">
-                        <property name="name">lbl_total_netto</property>
+                      <object class="GtkEntry" id="input_total_netto">
+                        <property name="name">input_total_netto</property>
                         <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="label" translatable="yes">0</property>
+                        <property name="can_focus">True</property>
+                        <property name="halign">center</property>
+                        <property name="margin_left">5</property>
+                        <property name="margin_right">5</property>
+                        <property name="margin_top">5</property>
+                        <property name="margin_bottom">5</property>
+                        <property name="width_chars">7</property>
                       </object>
                       <packing>
                         <property name="left_attach">4</property>
@@ -1161,23 +1175,15 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkLabel" id="lbl_total_vat_rate">
-                        <property name="name">lbl_total_vat_rate</property>
+                      <object class="GtkEntry" id="input_total_vat_value">
+                        <property name="name">input_total_vat_value</property>
                         <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="label" translatable="yes">-</property>
-                      </object>
-                      <packing>
-                        <property name="left_attach">5</property>
-                        <property name="top_attach">3</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkLabel" id="lbl_total_vat_value">
-                        <property name="name">lbl_total_vat_value</property>
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="label" translatable="yes">0</property>
+                        <property name="can_focus">True</property>
+                        <property name="margin_left">5</property>
+                        <property name="margin_right">5</property>
+                        <property name="margin_top">5</property>
+                        <property name="margin_bottom">5</property>
+                        <property name="width_chars">7</property>
                       </object>
                       <packing>
                         <property name="left_attach">6</property>
@@ -1185,11 +1191,15 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkLabel" id="lbl_total_brutto">
-                        <property name="name">lbl_total_brutto</property>
+                      <object class="GtkEntry" id="input_total_brutto">
+                        <property name="name">input_total_brutto</property>
                         <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="label" translatable="yes">0</property>
+                        <property name="can_focus">True</property>
+                        <property name="margin_left">5</property>
+                        <property name="margin_right">5</property>
+                        <property name="margin_top">5</property>
+                        <property name="margin_bottom">5</property>
+                        <property name="width_chars">7</property>
                       </object>
                       <packing>
                         <property name="left_attach">7</property>
@@ -1197,15 +1207,37 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkLabel" id="lbl_razem">
-                        <property name="name">lbl_razem</property>
+                      <object class="GtkEntry" id="input_total">
+                        <property name="name">input_total</property>
                         <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="label" translatable="yes">0</property>
+                        <property name="can_focus">True</property>
+                        <property name="margin_left">5</property>
+                        <property name="margin_right">5</property>
+                        <property name="margin_top">5</property>
+                        <property name="margin_bottom">5</property>
+                        <property name="width_chars">7</property>
                       </object>
                       <packing>
                         <property name="left_attach">7</property>
                         <property name="top_attach">4</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkEntry" id="input_total_vat_rate">
+                        <property name="name">input_total_vat_rate</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="halign">center</property>
+                        <property name="margin_left">5</property>
+                        <property name="margin_right">5</property>
+                        <property name="margin_top">5</property>
+                        <property name="margin_bottom">5</property>
+                        <property name="width_chars">7</property>
+                        <property name="text" translatable="yes">0</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">5</property>
+                        <property name="top_attach">3</property>
                       </packing>
                     </child>
                   </object>
