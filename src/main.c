@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <math.h>
 #include "main.h"
 
 int main(int argc, char *argv[])
@@ -51,6 +52,8 @@ int main(int argc, char *argv[])
         GTK_COMBO_BOX_TEXT(gtk_builder_get_object(builder, "input_buyer_country"));
     input_buyer_nip =
         GTK_ENTRY(gtk_builder_get_object(builder, "input_buyer_nip"));
+    lbl_product1_netto_total =
+        GTK_LABEL(gtk_builder_get_object(builder, "lbl_product1_netto_total"));
 
     g_signal_connect (window, "destroy",
                   G_CALLBACK (destroy), NULL);
@@ -65,6 +68,28 @@ int main(int argc, char *argv[])
 static void destroy(GtkWidget *widget, gpointer data)
 {
     gtk_main_quit();
+}
+
+void on_input_product1_net_changed
+    (GtkEditable *input_product1_net, GtkComboBoxText *input_product1_qty)
+{
+    char* pnet;
+    char* pqt;
+    char totals[50];
+    float netto, qty, total;
+    pnet = gtk_editable_get_chars(input_product1_net, 0, -1);
+    netto = atof(pnet);
+    pqt = gtk_combo_box_text_get_active_text(input_product1_qty);
+    qty = atof(pqt);
+    total = netto * qty;
+    snprintf(totals,sizeof(totals), "%.2f", total);
+    gtk_label_set_text(lbl_product1_netto_total, totals);
+}
+
+void on_input_product1_qty_changed
+    (GtkComboBoxText *input_product1_qty, GtkEditable *input_product1_net)
+{
+    on_input_product1_net_changed(input_product1_net, input_product1_qty);
 }
 
 void on_btn_print_clicked()

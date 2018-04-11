@@ -848,6 +848,7 @@
                         <property name="margin_top">5</property>
                         <property name="margin_bottom">5</property>
                         <property name="width_chars">3</property>
+                        <signal name="changed" handler="on_input_product1_net_changed" object="input_product1_qty" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">3</property>
@@ -892,6 +893,7 @@
                           <item translatable="yes">7</item>
                           <item translatable="yes">8</item>
                         </items>
+                        <signal name="changed" handler="on_input_product1_qty_changed" object="input_product1_net" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">2</property>
@@ -916,8 +918,8 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkLabel" id="input_product1_netto_total">
-                        <property name="name">input_product1_netto_total</property>
+                      <object class="GtkLabel" id="lbl_product1_netto_total">
+                        <property name="name">lbl_product1_netto_total</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="margin_left">5</property>

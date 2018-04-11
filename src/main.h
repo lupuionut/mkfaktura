@@ -23,6 +23,10 @@ GtkEntry        *input_product2_name;
 GtkEntry        *input_product2_qty;
 GtkEntry        *input_product2_net;
 GtkEntry        *input_product2_vat_rate;
+GtkLabel        *lbl_product1_netto_total;
 static void destroy(GtkWidget *widget, gpointer data);
 char* insert_date(char* html);
-
+void on_input_product1_net_changed
+    (GtkEditable *input_product1_net, GtkComboBoxText *input_product1_qty);
+void on_input_product1_qty_changed
+    (GtkComboBoxText *input_product1_qty, GtkEditable *input_product1_net);
