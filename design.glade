@@ -926,6 +926,7 @@
                         <property name="margin_right">5</property>
                         <property name="margin_top">5</property>
                         <property name="margin_bottom">5</property>
+                        <property name="label" translatable="yes">0</property>
                         <property name="selectable">True</property>
                         <property name="width_chars">10</property>
                       </object>
@@ -943,6 +944,7 @@
                         <property name="margin_right">5</property>
                         <property name="margin_top">5</property>
                         <property name="margin_bottom">5</property>
+                        <property name="label" translatable="yes">0</property>
                         <property name="selectable">True</property>
                         <property name="width_chars">10</property>
                       </object>
@@ -960,6 +962,7 @@
                         <property name="margin_right">5</property>
                         <property name="margin_top">5</property>
                         <property name="margin_bottom">5</property>
+                        <property name="label" translatable="yes">0</property>
                         <property name="selectable">True</property>
                         <property name="width_chars">10</property>
                       </object>
@@ -1083,6 +1086,7 @@
                         <property name="margin_right">5</property>
                         <property name="margin_top">5</property>
                         <property name="margin_bottom">5</property>
+                        <property name="label" translatable="yes">0</property>
                         <property name="selectable">True</property>
                         <property name="width_chars">10</property>
                       </object>
@@ -1117,6 +1121,7 @@
                         <property name="margin_right">5</property>
                         <property name="margin_top">5</property>
                         <property name="margin_bottom">5</property>
+                        <property name="label" translatable="yes">0</property>
                         <property name="selectable">True</property>
                         <property name="width_chars">10</property>
                       </object>
@@ -1134,6 +1139,7 @@
                         <property name="margin_right">5</property>
                         <property name="margin_top">5</property>
                         <property name="margin_bottom">5</property>
+                        <property name="label" translatable="yes">0</property>
                         <property name="selectable">True</property>
                         <property name="width_chars">10</property>
                       </object>
@@ -1143,19 +1149,64 @@
                       </packing>
                     </child>
                     <child>
-                      <placeholder/>
+                      <object class="GtkLabel" id="lbl_total_netto">
+                        <property name="name">lbl_total_netto</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">0</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">4</property>
+                        <property name="top_attach">3</property>
+                      </packing>
                     </child>
                     <child>
-                      <placeholder/>
+                      <object class="GtkLabel" id="lbl_total_vat_rate">
+                        <property name="name">lbl_total_vat_rate</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">-</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">5</property>
+                        <property name="top_attach">3</property>
+                      </packing>
                     </child>
                     <child>
-                      <placeholder/>
+                      <object class="GtkLabel" id="lbl_total_vat_value">
+                        <property name="name">lbl_total_vat_value</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">0</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">6</property>
+                        <property name="top_attach">3</property>
+                      </packing>
                     </child>
                     <child>
-                      <placeholder/>
+                      <object class="GtkLabel" id="lbl_total_brutto">
+                        <property name="name">lbl_total_brutto</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">0</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">7</property>
+                        <property name="top_attach">3</property>
+                      </packing>
                     </child>
                     <child>
-                      <placeholder/>
+                      <object class="GtkLabel" id="lbl_razem">
+                        <property name="name">lbl_razem</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">0</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">7</property>
+                        <property name="top_attach">4</property>
+                      </packing>
                     </child>
                   </object>
                   <packing>
