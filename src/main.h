@@ -33,6 +33,7 @@ GtkEntry        *input_total_netto;
 GtkEntry        *input_total_vat_value;
 GtkEntry        *input_total_brutto;
 GtkEntry        *input_total;
+GtkTextBuffer   *model_faktura;
 float total_netto_1;
 float total_netto_2;
 float total_vat_1;
@@ -41,7 +42,6 @@ float total_brutto_1;
 float total_brutto_2;
 
 static void destroy(GtkWidget *widget, gpointer data);
-char* insert_date(char* html);
 void on_input_product1_net_changed
     (GtkEditable *input_product1_net, GtkComboBoxText *input_product1_qty);
 void on_input_product1_qty_changed
@@ -58,3 +58,7 @@ void on_input_product2_netto_changed
     (GtkEditable *input_product2_netto, GtkEntry *input_product2_vat_rate);
 void on_input_product2_vat_rate_changed
     (GtkEntry *input_product2_vat_rate, GtkEditable *input_product2_netto);
+void output_to_file(char* html);
+char* read_template(char* location);
+char* insert_date(char* html);
+char* replace_str(char* str, char* orig, char* rep);

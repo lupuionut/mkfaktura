@@ -36,8 +36,13 @@ int main(int argc, char *argv[])
         GTK_ENTRY(gtk_builder_get_object(builder, "input_total_vat_value"));
     input_total_brutto =
         GTK_ENTRY(gtk_builder_get_object(builder, "input_total_brutto"));
-     input_total =
+    input_total =
         GTK_ENTRY(gtk_builder_get_object(builder, "input_total"));
+    model_faktura =
+        GTK_TEXT_BUFFER(gtk_builder_get_object(builder, "model_faktura"));
+    input_date =
+        GTK_CALENDAR(gtk_builder_get_object(builder, "input_date"));
+
 
      g_signal_connect (window, "destroy",
                   G_CALLBACK (destroy), NULL);
@@ -195,21 +200,69 @@ void on_input_product2_vat_rate_changed
 
 void on_btn_print_clicked()
 {
-    char* html = malloc(1000*sizeof(char));
-    char* buffer = malloc(1000*sizeof(char));
-    html = "year %u month %u day%u and this %u and %u";
+    char* buffer;
+    char* html;
+    html = read_template("templates/faktura.txt");
     buffer = insert_date(html);
-    printf("%s", buffer);
+    output_to_file(buffer);
 }
 
 char* insert_date(char* html)
 {
-    unsigned int year;
-    unsigned int month;
-    unsigned int day;
-    char* buffer = malloc(1000*sizeof(char));
-
+    GDate date;
+    guint year, month, day;
+    gsize buff_len = 11;
+    char* buffer = malloc(5000*sizeof(char));
+    char* datestr = malloc(11*sizeof(char));
     gtk_calendar_get_date(input_date, &year, &month, &day);
-    sprintf(buffer, html, year, month, day);
+    g_date_set_dmy(&date, day, month + 1, year);
+    g_date_strftime(datestr, buff_len, "%d.%m.%Y", &date);
+    buffer = replace_str(html, "%fakturadate%", datestr);
+    free(datestr);
     return buffer;
+}
+
+void output_to_file(char* html)
+{
+    FILE* out = fopen("faktura.out", "w+");
+    if (out) {
+        fprintf(out, "%s", html);
+    }
+    fclose(out);
+}
+
+char* read_template(char* location)
+{
+    FILE *f = fopen(location, "rb");
+    fseek(f, 0, SEEK_END);
+    long fsize = ftell(f);
+    fseek(f, 0, SEEK_SET);
+
+    char *string = malloc(fsize + 1);
+    fread(string, fsize, 1, f);
+    fclose(f);
+
+    string[fsize] = 0;
+
+    return string;
+}
+
+char* replace_str(char* str, char* orig, char* rep)
+{
+  static char temp[4096];
+  static char buffer[4096];
+  char *p;
+
+  strcpy(temp, str);
+
+  if(!(p = strstr(temp, orig)))
+    return temp;
+
+  strncpy(buffer, temp, p-temp);
+  buffer[p-temp] = '\0';
+
+  sprintf(buffer + (p - temp), "%s%s", rep, p + strlen(orig));
+  sprintf(str, "%s", buffer);
+
+  return str;
 }
