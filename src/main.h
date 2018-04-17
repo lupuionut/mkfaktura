@@ -16,14 +16,14 @@ GtkEntry        *input_buyer_city;
 GtkComboBoxText *input_buyer_country;
 GtkEntry        *input_buyer_nip;
 GtkEntry        *input_product1_name;
-GtkEntry        *input_product1_qty;
+GtkComboBoxText *input_product1_qty;
 GtkEntry        *input_product1_net;
 GtkEntry        *input_product1_netto;
 GtkEntry        *input_product1_vat_rate;
 GtkEntry        *input_product1_vat_value;
 GtkEntry        *input_product1_brutto;
 GtkEntry        *input_product2_name;
-GtkEntry        *input_product2_qty;
+GtkComboBoxText *input_product2_qty;
 GtkEntry        *input_product2_net;
 GtkEntry        *input_product2_netto;
 GtkEntry        *input_product2_vat_rate;
@@ -61,4 +61,17 @@ void on_input_product2_vat_rate_changed
 void output_to_file(char* html);
 char* read_template(char* location);
 char* insert_date(char* html);
-char* replace_str(char* str, char* orig, char* rep);
+char* insert_total_netto(char* html);
+char* insert_total_vat(char* html);
+char* insert_total_brutto(char* html);
+char* insert_total(char* html);
+char* insert_currency(char* html);
+char* replace_str(char* str, const char* orig, const char* rep);
+char* insert_invoice_nr(char* html);
+char* insert_product_1(char* html, char* html_part);
+char* insert_product_2(char* html, char* html_part);
+char* build_product_row(char* html_part, const char* name, const char* qty,
+        const char* net, const char* netto, const char* vat_rate,
+        const char* vat_value, const char* brutto);
+void pdf_print();
+

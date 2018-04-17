@@ -52,29 +52,30 @@
 			<table class="table">
 				<thead>
 					<tr>
-						<td>Towar lub usługa</td>
+						<td class="text-center">Towar lub usługa</td>
 						<td class="text-center">J.m</td>
 						<td class="text-center">Ilość</td>
 						<td class="text-center">Cena netto</td>
 						<td class="text-center">Wartość netto</td>
-						<td class="text-center">Stawka VAT</td>
+						<td class="text-center">Stawka VAT (%)</td>
 						<td class="text-center">Kwota VAT</td>
 						<td class="text-center">Cena brutto</td>
 					</tr>
 				</thead>
 				<tbody>
-					
+					%product1%
+					%product2%
 					<tr class="total">
 						<td colspan="4" class="thick-line text-center">Razem</td>
+						<td class="thick-line text-center">%total_netto%</td>
 						<td class="thick-line text-center"></td>
-						<td class="thick-line text-center"></td>
-						<td class="thick-line text-center"></td>
-						<td class="thick-line text-center"></td>
+						<td class="thick-line text-center">%total_vat%</td>
+						<td class="thick-line text-center">%total_brutto%</td>
 					</tr>
 					<tr class="total">
 						<td colspan="4" class="no-line text-center">Razem do zapłaty</td>
 						<td colspan="2" class="thick-line text-center"></td>
-						<td colspan="2" class="thick-line text-center"></td>
+						<td colspan="2" class="thick-line text-center">%total% %currency%</td>
 					</tr>
 				</tbody>
 			</table>
