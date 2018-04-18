@@ -18,6 +18,34 @@ int main(int argc, char *argv[])
     window = GTK_WIDGET(gtk_builder_get_object(builder, "faktura"));
     gtk_builder_connect_signals(builder, NULL);
 
+    input_seller_name =
+        GTK_ENTRY(gtk_builder_get_object(builder, "input_seller_name"));
+    input_buyer_name =
+        GTK_ENTRY(gtk_builder_get_object(builder, "input_buyer_name"));
+    input_seller_business =
+        GTK_ENTRY(gtk_builder_get_object(builder, "input_seller_business"));
+    input_buyer_business =
+        GTK_ENTRY(gtk_builder_get_object(builder, "input_buyer_business"));
+    input_seller_address =
+        GTK_ENTRY(gtk_builder_get_object(builder, "input_seller_address"));
+    input_buyer_address =
+        GTK_ENTRY(gtk_builder_get_object(builder, "input_buyer_address"));
+    input_seller_zip =
+        GTK_ENTRY(gtk_builder_get_object(builder, "input_seller_zip"));
+    input_buyer_zip =
+        GTK_ENTRY(gtk_builder_get_object(builder, "input_buyer_zip"));
+    input_seller_city =
+        GTK_ENTRY(gtk_builder_get_object(builder, "input_seller_city"));
+    input_buyer_city =
+        GTK_ENTRY(gtk_builder_get_object(builder, "input_buyer_city"));
+    input_seller_nip =
+        GTK_ENTRY(gtk_builder_get_object(builder, "input_seller_nip"));
+    input_buyer_nip =
+        GTK_ENTRY(gtk_builder_get_object(builder, "input_buyer_nip"));
+    input_seller_country =
+        GTK_COMBO_BOX_TEXT(gtk_builder_get_object(builder, "input_seller_country"));
+    input_buyer_country =
+        GTK_COMBO_BOX_TEXT(gtk_builder_get_object(builder, "input_buyer_country"));
     input_product1_name =
         GTK_ENTRY(gtk_builder_get_object(builder, "input_product1_name"));
     input_product1_net =
@@ -225,6 +253,8 @@ void on_btn_print_clicked()
     html_part = read_template("templates/faktura-loop.txt");
     html = insert_invoice_nr(html);
     html = insert_date(html);
+    html = insert_seller(html);
+    html = insert_buyer(html);
     html = insert_total_netto(html);
     html = insert_total_vat(html);
     html = insert_total_brutto(html);
@@ -248,6 +278,151 @@ void pdf_print()
     strcat(fullpath, "/faktura.out");
     strcat(command, fullpath);
     system(command);
+}
+
+char* insert_seller(char* html)
+{
+    const char* seller;
+    char* buffer = malloc(5000*sizeof(char));
+    seller = build_seller();
+    buffer = replace_str(html, "%seller%", seller);
+    return buffer;
+}
+
+const char* build_seller()
+{
+    char seller[1000] = {"\0"};
+    const char* buffer;
+    const char* name;
+    const char* business;
+    const char* address;
+    const char* zip;
+    const char* city;
+    char* country;
+    const char* nip;
+
+    name = gtk_entry_get_text(input_seller_name);
+    business = gtk_entry_get_text(input_seller_business);
+    address = gtk_entry_get_text(input_seller_address);
+    zip = gtk_entry_get_text(input_seller_zip);
+    city = gtk_entry_get_text(input_seller_city);
+    nip = gtk_entry_get_text(input_seller_nip);
+    country = gtk_combo_box_text_get_active_text(input_seller_country);
+
+    if (strlen(name) != 0)
+    {
+        strcat(seller, name);
+        strcat(seller, "<br/>");
+    }
+
+    if (strlen(business) != 0)
+    {
+        strcat(seller, business);
+        strcat(seller, "<br/>");
+    }
+
+    if (strlen(address) != 0)
+    {
+        strcat(seller, address);
+        strcat(seller, "<br/>");
+    }
+
+    if (strlen(city) != 0)
+    {
+        strcat(seller, city);
+        if (strlen(zip) != 0) {
+            strcat(seller, ", ");
+            strcat(seller, zip);
+        }
+        strcat(seller, "<br/>");
+    }
+
+    if (country != NULL)
+    {
+        strcat(seller, country);
+        strcat(seller, "<br/>");
+    }
+
+    if (strlen(nip) != 0)
+    {
+        strcat(seller, "NIP ");
+        strcat(seller, nip);
+        strcat(seller, "<br/>");
+    }
+    buffer = seller;
+    return buffer;
+}
+
+char* insert_buyer(char* html)
+{
+    const char* buyer;
+    char* buffer = malloc(5000*sizeof(char));
+    buyer = build_buyer();
+    buffer = replace_str(html, "%buyer%", buyer);
+    return buffer;
+}
+
+const char* build_buyer()
+{
+    char buyer[1000] = {"\0"};
+    const char* buffer;
+    const char* name;
+    const char* business;
+    const char* address;
+    const char* zip;
+    const char* city;
+    char* country;
+    const char* nip;
+
+    name = gtk_entry_get_text(input_buyer_name);
+    business = gtk_entry_get_text(input_buyer_business);
+    address = gtk_entry_get_text(input_buyer_address);
+    zip = gtk_entry_get_text(input_buyer_zip);
+    city = gtk_entry_get_text(input_buyer_city);
+    nip = gtk_entry_get_text(input_buyer_nip);
+    country = gtk_combo_box_text_get_active_text(input_buyer_country);
+
+    if (strlen(name) != 0)
+    {
+        strcat(buyer, name);
+        strcat(buyer, "<br/>");
+    }
+
+    if (strlen(business) != 0)
+    {
+        strcat(buyer, business);
+        strcat(buyer, "<br/>");
+    }
+
+    if (strlen(address) != 0)
+    {
+        strcat(buyer, address);
+        strcat(buyer, "<br/>");
+    }
+
+    if (strlen(city) != 0)
+    {
+        if (strlen(zip) != 0) {
+            strcat(buyer, zip);
+            strcat(buyer, ", ");
+        }
+        strcat(buyer, city);
+        strcat(buyer, "<br/>");
+    }
+
+    if (country != NULL)
+    {
+        strcat(buyer, country);
+        strcat(buyer, "<br/>");
+    }
+
+    if (strlen(nip) != 0)
+    {
+        strcat(buyer, nip);
+        strcat(buyer, "<br/>");
+    }
+    buffer = buyer;
+    return buffer;
 }
 
 char* insert_invoice_nr(char* html)
@@ -315,6 +490,10 @@ char* insert_currency(char* html)
     char* buffer = malloc(5000*sizeof(char));
     currency = gtk_combo_box_text_get_active_text(input_currency);
     buffer = replace_str(html, "%currency%", currency);
+    buffer = replace_str(buffer, "%currency0%", currency);
+    buffer = replace_str(buffer, "%currency1%", currency);
+    buffer = replace_str(buffer, "%currency2%", currency);
+    buffer = replace_str(buffer, "%currency3%", currency);
     return buffer;
 }
 

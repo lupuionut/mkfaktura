@@ -1,1 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Faktura</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <style type="text/css">
+		body{font-size: 15px;line-height: 24px; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;}
+		.total-inter{font-size:20px;}
+		.total{font-size:24px;}
+		.table thead{background:#eee;}
+		 @page { 
+			 margin:0px;
+			 size: auto;
+		 }
+		@media print {
+			body { -webkit-print-color-adjust: exact; } 
+			@page {
+				margin-left:30px;
+				margin-right:20px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="page-header text-center">
+				  <h1>Faktura <small>Nr. </small></h1>
+				</div>
+				<div class="row">
+					<div class="col-xs-5 col-xs-offset-7 panel panel-default">
+						<div class="panel-body">
+							<h4>Data wystawienia 10.04.2018</h4>
+						
+						</div>
+					</div>
+				</div>
 
+				<div class="row">
+					<div class="col-xs-7">
+						<h3>Sprzedawca</h3>
+						<address>Weronika Lupu<br/>Ul. Niepodległoșci 6<br/>Miejska Gorka, 63-910<br/>Albania<br/>NIP PL30321213232<br/></address>
+					</div>
+					<div class="col-xs-5 text-left">
+						<h3>Nabywca</h3>
+						<address>Văßman Vasile<br/>Cocos<br/>Str. George Cosbuc Nr. 14<br/>810174, Brăila<br/>Wyspy Alandzkie<br/>90223232<br/></address>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<br/>
+		<br/>
+		
+		<div class="row">
+			<table class="table">
+				<thead>
+					<tr>
+						<td class="text-center">Towar lub usługa</td>
+						<td class="text-center">J.m</td>
+						<td class="text-center">Ilość</td>
+						<td class="text-center">Cena netto EUR</td>
+						<td class="text-center">Wartość netto EUR</td>
+						<td class="text-center">Stawka VAT (%)</td>
+						<td class="text-center">Kwota VAT EUR</td>
+						<td class="text-center">Cena brutto EUR</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+	<td class="text-center">J!Extranet</td>
+	<td class="text-center">szt</td>
+	<td class="text-center">1</td>
+	<td class="text-center">50.00</td>
+	<td class="text-center">50.00</td>
+	<td class="text-center">23</td>
+	<td class="text-center">11.50</td>
+	<td class="text-center">61.50</td>
+</tr>
+
+					
+					<tr class="total-inter">
+						<td colspan="4" class="thick-line text-center">Razem</td>
+						<td class="thick-line text-center">50.00</td>
+						<td class="thick-line text-center"></td>
+						<td class="thick-line text-center">11.50</td>
+						<td class="thick-line text-center">61.50</td>
+					</tr>
+					<tr class="total">
+						<td colspan="4" class="no-line text-center">Razem do zapłaty</td>
+						<td colspan="2" class="thick-line text-center"></td>
+						<td colspan="2" class="thick-line text-center">61.50 EUR</td>
+					</tr>
+				</tbody>
+			</table>
+			<p></p>
+		</div>
+	</div>
+</body>
+</html>
