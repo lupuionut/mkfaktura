@@ -249,6 +249,11 @@ void on_btn_print_clicked()
 {
     char* html;
     char* html_part;
+    const char* vat_rate1;
+    const char* vat_rate2;
+    vat_rate1 = gtk_entry_get_text(input_product1_vat_rate);
+    vat_rate2 = gtk_entry_get_text(input_product2_vat_rate);
+
     html = read_template("templates/faktura.txt");
     html_part = read_template("templates/faktura-loop.txt");
     html = insert_invoice_nr(html);
@@ -262,6 +267,13 @@ void on_btn_print_clicked()
     html = insert_currency(html);
     html = insert_product_1(html, html_part);
     html = insert_product_2(html, html_part);
+
+    if(strstr(vat_rate1, "-") != NULL || strstr(vat_rate2,"-") != NULL) {
+        html = insert_mentions(html, "Odwrotne obciążenie / Reverse charge");
+    } else {
+        html = insert_mentions(html, " ");
+    }
+
     output_to_file(html);
     pdf_print();
     free(html);
@@ -311,14 +323,15 @@ const char* build_seller()
 
     if (strlen(name) != 0)
     {
-        strcat(seller, name);
-        strcat(seller, "<br/>");
-    }
 
-    if (strlen(business) != 0)
-    {
-        strcat(seller, business);
-        strcat(seller, "<br/>");
+        strcat(seller, "<span class='name'>");
+        strcat(seller, name);
+        if (strlen(business) != 0)
+        {
+            strcat(seller, "<br/>");
+            strcat(seller, business);
+        }
+        strcat(seller, "</span>");
     }
 
     if (strlen(address) != 0)
@@ -329,11 +342,11 @@ const char* build_seller()
 
     if (strlen(city) != 0)
     {
-        strcat(seller, city);
         if (strlen(zip) != 0) {
-            strcat(seller, ", ");
             strcat(seller, zip);
+            strcat(seller, ", ");
         }
+        strcat(seller, city);
         strcat(seller, "<br/>");
     }
 
@@ -345,9 +358,10 @@ const char* build_seller()
 
     if (strlen(nip) != 0)
     {
+        strcat(seller, "<span class='nip'>");
         strcat(seller, "NIP ");
         strcat(seller, nip);
-        strcat(seller, "<br/>");
+        strcat(seller, "</span>");
     }
     buffer = seller;
     return buffer;
@@ -384,14 +398,14 @@ const char* build_buyer()
 
     if (strlen(name) != 0)
     {
+        strcat(buyer, "<span class='name'>");
         strcat(buyer, name);
-        strcat(buyer, "<br/>");
-    }
-
-    if (strlen(business) != 0)
-    {
-        strcat(buyer, business);
-        strcat(buyer, "<br/>");
+        if (strlen(business) != 0)
+        {
+            strcat(buyer, "<br/>");
+            strcat(buyer, business);
+        }
+        strcat(buyer, "</span>");
     }
 
     if (strlen(address) != 0)
@@ -418,8 +432,9 @@ const char* build_buyer()
 
     if (strlen(nip) != 0)
     {
+        strcat(buyer, "<span class='nip'>");
         strcat(buyer, nip);
-        strcat(buyer, "<br/>");
+        strcat(buyer, "</span>");
     }
     buffer = buyer;
     return buffer;
@@ -578,6 +593,13 @@ char* build_product_row(char* html_part, const char* name, const char* qty,
     partial = replace_str(partial, "%product_vat_value%", vat_value);
     partial = replace_str(partial, "%product_brutto%", brutto);
     return partial;
+}
+
+char* insert_mentions(char* html, char* mentions)
+{
+    char* buffer = malloc(5000*sizeof(char));
+    buffer = replace_str(html, "%mentions%", mentions);
+    return buffer;
 }
 
 void output_to_file(char* html)

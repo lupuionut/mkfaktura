@@ -10,6 +10,8 @@
 		.total-inter{font-size:20px;}
 		.total{font-size:24px;}
 		.table thead{background:#eee;}
+		.name{display:block;margin-bottom:10px;}
+		.nip{display:block;margin-top:8px;}
 		 @page { 
 			 margin:0px;
 			 size: auto;
@@ -85,7 +87,7 @@
 					</tr>
 				</tbody>
 			</table>
-			<p></p>
+			<p>%mentions%</p>
 		</div>
 	</div>
 </body>

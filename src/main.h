@@ -73,6 +73,7 @@ char* insert_product_2(char* html, char* html_part);
 char* build_product_row(char* html_part, const char* name, const char* qty,
         const char* net, const char* netto, const char* vat_rate,
         const char* vat_value, const char* brutto);
+char* insert_mentions(char* html, char* mentions);
 void pdf_print();
 char* insert_seller(char* html);
 const char* build_seller();
