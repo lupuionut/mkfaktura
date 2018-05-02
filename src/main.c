@@ -287,7 +287,7 @@ void pdf_print()
     getcwd(path, sizeof(path));
     strcpy(command,"chromium --headless --disable-gpu --print-to-pdf ");
     strcpy(fullpath, path);
-    strcat(fullpath, "/faktura.out");
+    strcat(fullpath, "/faktura.html");
     strcat(command, fullpath);
     system(command);
 }
@@ -604,7 +604,7 @@ char* insert_mentions(char* html, char* mentions)
 
 void output_to_file(char* html)
 {
-    FILE* out = fopen("faktura.out", "w+");
+    FILE* out = fopen("faktura.html", "w+");
     if (out) {
         fprintf(out, "%s", html);
     }
