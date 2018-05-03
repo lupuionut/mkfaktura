@@ -1,3 +1,38 @@
+struct vatrate {
+    const char* country;
+    const char* rate;
+};
+static struct vatrate rates[] = {
+    {"AT", "20"},
+    {"BE", "21"},
+    {"BG", "20"},
+    {"HR", "25"},
+    {"CY", "19"},
+    {"CZ", "21"},
+    {"DK", "25"},
+    {"EE", "20"},
+    {"FI", "24"},
+    {"FR", "20"},
+    {"MO", "20"},
+    {"DE", "19"},
+    {"EL", "24"},
+    {"HU", "27"},
+    {"IE", "23"},
+    {"IT", "22"},
+    {"LV", "21"},
+    {"LT", "21"},
+    {"LU", "17"},
+    {"MT", "18"},
+    {"NL", "21"},
+    {"PL", "23"},
+    {"PT", "23"},
+    {"RO", "19"},
+    {"SK", "20"},
+    {"SI", "22"},
+    {"ES", "21"},
+    {"SE", "25"},
+    {"GB", "20"}
+};
 GtkCalendar     *input_date;
 GtkEntry        *input_invoice_nr;
 GtkComboBoxText *input_currency;
@@ -58,6 +93,10 @@ void on_input_product2_netto_changed
     (GtkEditable *input_product2_netto, GtkEntry *input_product2_vat_rate);
 void on_input_product2_vat_rate_changed
     (GtkEntry *input_product2_vat_rate, GtkEditable *input_product2_netto);
+void on_input_buyer_country_changed
+    (GtkComboBox *input_buyer_country, GtkEntry *input_product1_vat_rate);
+void on_input_buyer_nip_changed
+    (GtkEditable *input_buyer_nip, GtkComboBox *input_buyer_country);
 void output_to_file(char* html);
 char* read_template(char* location);
 char* insert_date(char* html);
@@ -79,3 +118,4 @@ char* insert_seller(char* html);
 const char* build_seller();
 char* insert_buyer(char* html);
 const char* build_buyer();
+const char* get_vat_rate(const char* code);

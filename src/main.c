@@ -245,14 +245,51 @@ void on_input_product2_vat_rate_changed
 }
 // PRODUCT2 CHANGES
 
+void on_input_buyer_country_changed
+    (GtkComboBox *input_buyer_country, GtkEntry *input_product1_vat_rate )
+{
+    const char* code;
+    const char* vat;
+
+    code = gtk_combo_box_get_active_id(input_buyer_country);
+    vat  = get_vat_rate(code);
+    gtk_entry_set_text(input_product1_vat_rate, vat);
+}
+
+const char* get_vat_rate(const char* code)
+{
+    size_t length = sizeof(rates)/sizeof(rates[0]);
+    int i;
+
+    for (i = 0 ; i<length; i++) {
+        if (strstr(rates[i].country, code) != NULL) {
+            return rates[i].rate;
+        }
+    }
+
+    return "-";
+}
+
+void on_input_buyer_nip_changed
+    (GtkEditable *input_buyer_nip, GtkComboBox *input_buyer_country)
+{
+    const char* code;
+    code = gtk_combo_box_get_active_id(input_buyer_country);
+
+    // if it's not from poland and if it has a vat rate, means that from EU
+    if (strstr(code, "PL") == NULL && strstr(get_vat_rate(code), "-") == NULL) {
+        gtk_entry_set_text(input_product1_vat_rate, "0");
+    }
+}
+
 void on_btn_print_clicked()
 {
     char* html;
     char* html_part;
     const char* vat_rate1;
-    const char* vat_rate2;
+    int vat;
     vat_rate1 = gtk_entry_get_text(input_product1_vat_rate);
-    vat_rate2 = gtk_entry_get_text(input_product2_vat_rate);
+    vat = atoi(vat_rate1);
 
     html = read_template("templates/faktura.txt");
     html_part = read_template("templates/faktura-loop.txt");
@@ -268,7 +305,7 @@ void on_btn_print_clicked()
     html = insert_product_1(html, html_part);
     html = insert_product_2(html, html_part);
 
-    if(strstr(vat_rate1, "-") != NULL || strstr(vat_rate2,"-") != NULL) {
+    if(strstr(vat_rate1, "0") != NULL && vat == 0) {
         html = insert_mentions(html, "Odwrotne obciążenie / Reverse charge");
     } else {
         html = insert_mentions(html, " ");

@@ -632,6 +632,7 @@
                         <property name="margin_right">5</property>
                         <property name="margin_top">5</property>
                         <property name="margin_bottom">5</property>
+                        <signal name="changed" handler="on_input_buyer_nip_changed" object="input_buyer_country" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">3</property>
@@ -667,252 +668,253 @@
                         <property name="margin_top">5</property>
                         <property name="margin_bottom">5</property>
                         <items>
-                          <item translatable="yes">Afganistan</item>
-                          <item translatable="yes">Wyspy Alandzkie</item>
-                          <item translatable="yes">Albania</item>
-                          <item translatable="yes">Algeria</item>
-                          <item translatable="yes">Samoa Amerykańskie</item>
-                          <item translatable="yes">Andorra</item>
-                          <item translatable="yes">Angola</item>
-                          <item translatable="yes">Anguilla</item>
-                          <item translatable="yes">Antarktyka</item>
-                          <item translatable="yes">Antigua i Barbuda</item>
-                          <item translatable="yes">Argentyna</item>
-                          <item translatable="yes">Armenia</item>
-                          <item translatable="yes">Aruba</item>
-                          <item translatable="yes">Australia</item>
-                          <item translatable="yes">Austria</item>
-                          <item translatable="yes">Azerbejdżan</item>
-                          <item translatable="yes">Bahamy</item>
-                          <item translatable="yes">Bahrajn</item>
-                          <item translatable="yes">Bangladesz</item>
-                          <item translatable="yes">Barbados</item>
-                          <item translatable="yes">Białoruś</item>
-                          <item translatable="yes">Belgia</item>
-                          <item translatable="yes">Belize</item>
-                          <item translatable="yes">Benin</item>
-                          <item translatable="yes">Bermudy</item>
-                          <item translatable="yes">Bhutan</item>
-                          <item translatable="yes">Boliwia</item>
-                          <item translatable="yes">Bośnia i Herzegowina</item>
-                          <item translatable="yes">Botswana</item>
-                          <item translatable="yes">Wyspa Bouveta</item>
-                          <item translatable="yes">Brazylia</item>
-                          <item translatable="yes">Brytyjskie Terytorium Oceanu Indyjskiego</item>
-                          <item translatable="yes">Brunei</item>
-                          <item translatable="yes">Bułgaria</item>
-                          <item translatable="yes">Burkina Faso</item>
-                          <item translatable="yes">Burundi</item>
-                          <item translatable="yes">Kambodża</item>
-                          <item translatable="yes">Kamerun</item>
-                          <item translatable="yes">Kanada</item>
-                          <item translatable="yes">Republika Zielonego Przylądka</item>
-                          <item translatable="yes">Kajmany</item>
-                          <item translatable="yes">Republika Środkowoafrykańska</item>
-                          <item translatable="yes">Czad</item>
-                          <item translatable="yes">Chile</item>
-                          <item translatable="yes">Chiny</item>
-                          <item translatable="yes">Wyspa Bożego Narodzenia</item>
-                          <item translatable="yes">Wyspy Kokosowe</item>
-                          <item translatable="yes">Kolumbia</item>
-                          <item translatable="yes">Komory</item>
-                          <item translatable="yes">Kongo</item>
-                          <item translatable="yes">Demokratyczna Republika Konga</item>
-                          <item translatable="yes">Wyspy Cooka</item>
-                          <item translatable="yes">Kostaryka</item>
-                          <item translatable="yes">Wybrzeże Kości Słoniowej</item>
-                          <item translatable="yes">Chorwacja</item>
-                          <item translatable="yes">Kuba</item>
-                          <item translatable="yes">Cypr</item>
-                          <item translatable="yes">Czechy</item>
-                          <item translatable="yes">Dania</item>
-                          <item translatable="yes">Dżibuti</item>
-                          <item translatable="yes">Dominika</item>
-                          <item translatable="yes">Republika Dominikany</item>
-                          <item translatable="yes">Ekwador</item>
-                          <item translatable="yes">Egipt</item>
-                          <item translatable="yes">Salwador</item>
-                          <item translatable="yes">Gwinea Równikowa</item>
-                          <item translatable="yes">Erytrea</item>
-                          <item translatable="yes">Estonia</item>
-                          <item translatable="yes">Etiopia</item>
-                          <item translatable="yes">Falklandy/Malwiny</item>
-                          <item translatable="yes">Wyspy Owcze</item>
-                          <item translatable="yes">Fidżi</item>
-                          <item translatable="yes">Finlandia</item>
-                          <item translatable="yes">Francja</item>
-                          <item translatable="yes">Gujana Francuska</item>
-                          <item translatable="yes">Polinezja Francuska</item>
-                          <item translatable="yes">Francuskie Terytoria Południowe i Antarktyczne</item>
-                          <item translatable="yes">Gabon</item>
-                          <item translatable="yes">Gambia</item>
-                          <item translatable="yes">Gruzja</item>
-                          <item translatable="yes">Niemcy</item>
-                          <item translatable="yes">Ghana</item>
-                          <item translatable="yes">Gibraltar</item>
-                          <item translatable="yes">Grecja</item>
-                          <item translatable="yes">Grenlandia</item>
-                          <item translatable="yes">Grenada</item>
-                          <item translatable="yes">Gwadelupa</item>
-                          <item translatable="yes">Guam</item>
-                          <item translatable="yes">Gwatemala</item>
-                          <item translatable="yes">Guernsey</item>
-                          <item translatable="yes">Gwinea</item>
-                          <item translatable="yes">Gwinea Bissau</item>
-                          <item translatable="yes">Gujana</item>
-                          <item translatable="yes">Haiti</item>
-                          <item translatable="yes">Wyspy Heard i McDonalda</item>
-                          <item translatable="yes">Watykan</item>
-                          <item translatable="yes">Honduras</item>
-                          <item translatable="yes">Hong Kong</item>
-                          <item translatable="yes">Węgry</item>
-                          <item translatable="yes">Islandia</item>
-                          <item translatable="yes">Indie</item>
-                          <item translatable="yes">Indonezja</item>
-                          <item translatable="yes">Iran</item>
-                          <item translatable="yes">Irak</item>
-                          <item translatable="yes">Irlandia</item>
-                          <item translatable="yes">Wyspa Man</item>
-                          <item translatable="yes">Izrael</item>
-                          <item translatable="yes">Włochy</item>
-                          <item translatable="yes">Jamajka</item>
-                          <item translatable="yes">Japonia</item>
-                          <item translatable="yes">Jersey</item>
-                          <item translatable="yes">Jordania</item>
-                          <item translatable="yes">Kazachstan</item>
-                          <item translatable="yes">Kenia</item>
-                          <item translatable="yes">Kiribati</item>
-                          <item translatable="yes">Korea Północna</item>
-                          <item translatable="yes">Korea Południowa</item>
-                          <item translatable="yes">Kosowo</item>
-                          <item translatable="yes">Kuwejt</item>
-                          <item translatable="yes">Kirgistan</item>
-                          <item translatable="yes">Laos</item>
-                          <item translatable="yes">Łotwa</item>
-                          <item translatable="yes">Liban</item>
-                          <item translatable="yes">Lesoto</item>
-                          <item translatable="yes">Liberia</item>
-                          <item translatable="yes">Libia</item>
-                          <item translatable="yes">Liechtenstein</item>
-                          <item translatable="yes">Litwa</item>
-                          <item translatable="yes">Luksemburg</item>
-                          <item translatable="yes">Makao</item>
-                          <item translatable="yes">Macedonia</item>
-                          <item translatable="yes">Madagascar</item>
-                          <item translatable="yes">Malawi</item>
-                          <item translatable="yes">Malezja</item>
-                          <item translatable="yes">Maldiwy</item>
-                          <item translatable="yes">Mali</item>
-                          <item translatable="yes">Malta</item>
-                          <item translatable="yes">Wyspy Marshalla</item>
-                          <item translatable="yes">Martynika</item>
-                          <item translatable="yes">Mauretania</item>
-                          <item translatable="yes">Mauritius</item>
-                          <item translatable="yes">Majotta</item>
-                          <item translatable="yes">Meksyk</item>
-                          <item translatable="yes">Mikronezja</item>
-                          <item translatable="yes">Mołdawia</item>
-                          <item translatable="yes">Monako</item>
-                          <item translatable="yes">Mongolia</item>
-                          <item translatable="yes">Montserrat</item>
-                          <item translatable="yes">Maroko</item>
-                          <item translatable="yes">Mozambik</item>
-                          <item translatable="yes">Mjanma</item>
-                          <item translatable="yes">Namibia</item>
-                          <item translatable="yes">Nauru</item>
-                          <item translatable="yes">Nepal</item>
-                          <item translatable="yes">Holandia</item>
-                          <item translatable="yes">Antyle Holenderskie</item>
-                          <item translatable="yes">Nowa Kaledonia</item>
-                          <item translatable="yes">Nowa Zelandia</item>
-                          <item translatable="yes">Nikaragua</item>
-                          <item translatable="yes">Niger</item>
-                          <item translatable="yes">Nigeria</item>
-                          <item translatable="yes">Niue</item>
-                          <item translatable="yes">Wyspa Norfolk</item>
-                          <item translatable="yes">Mariany Północne</item>
-                          <item translatable="yes">Norwegia</item>
-                          <item translatable="yes">Oman</item>
-                          <item translatable="yes">Pakistan</item>
-                          <item translatable="yes">Palau</item>
-                          <item translatable="yes">Okupowane Terytorium Palestyny</item>
-                          <item translatable="yes">Panama</item>
-                          <item translatable="yes">Papua Nowa Gwinea</item>
-                          <item translatable="yes">Paragwaj</item>
-                          <item translatable="yes">Peru</item>
-                          <item translatable="yes">Filipiny</item>
-                          <item translatable="yes">Pitcairn</item>
-                          <item translatable="yes">Polska</item>
-                          <item translatable="yes">Portugalia</item>
-                          <item translatable="yes">Portoryko</item>
-                          <item translatable="yes">Katar</item>
-                          <item translatable="yes">Reunion</item>
-                          <item translatable="yes">Rumunia</item>
-                          <item translatable="yes">Federacja Rosyjska</item>
-                          <item translatable="yes">Rwanda</item>
-                          <item translatable="yes">Wyspa Świętej Heleny, Wyspa Wniebowstąpienia i Tristan da Cunha</item>
-                          <item translatable="yes">Saint Kitts i Nevis</item>
-                          <item translatable="yes">Saint Lucia</item>
-                          <item translatable="yes">Saint-Pierre i Miquelon</item>
-                          <item translatable="yes">Saint Vincent i Grenadyny</item>
-                          <item translatable="yes">Samoa</item>
-                          <item translatable="yes">San Marino</item>
-                          <item translatable="yes">Wyspy Świętego Tomasza i Książęca</item>
-                          <item translatable="yes">Arabia Saudyjska</item>
-                          <item translatable="yes">Senegal</item>
-                          <item translatable="yes">Serbia</item>
-                          <item translatable="yes">Czarnogóra</item>
-                          <item translatable="yes">Seszele</item>
-                          <item translatable="yes">Sierra Leone</item>
-                          <item translatable="yes">Singapur</item>
-                          <item translatable="yes">Słowacja</item>
-                          <item translatable="yes">Słowenia</item>
-                          <item translatable="yes">Wyspy Salomona</item>
-                          <item translatable="yes">Somalia</item>
-                          <item translatable="yes">Republika Południowej Afryki</item>
-                          <item translatable="yes">Georgia Południowa i Sandwich Południowy</item>
-                          <item translatable="yes">Hiszpania</item>
-                          <item translatable="yes">Sri Lanka</item>
-                          <item translatable="yes">Sudan</item>
-                          <item translatable="yes">Surinam</item>
-                          <item translatable="yes">Svalbard i Jan Mayen</item>
-                          <item translatable="yes">Suazi</item>
-                          <item translatable="yes">Szwecja</item>
-                          <item translatable="yes">Szwajcaria</item>
-                          <item translatable="yes">Syryjska Republika Arabska</item>
-                          <item translatable="yes">Tajwan</item>
-                          <item translatable="yes">Tadżykistan</item>
-                          <item translatable="yes">Tanzania</item>
-                          <item translatable="yes">Tajlandia</item>
-                          <item translatable="yes">Timor Wschodni</item>
-                          <item translatable="yes">Togo</item>
-                          <item translatable="yes">Tokelau</item>
-                          <item translatable="yes">Tonga</item>
-                          <item translatable="yes">Trinidad i Tobago</item>
-                          <item translatable="yes">Tunezja</item>
-                          <item translatable="yes">Turcja</item>
-                          <item translatable="yes">Turkmenistan</item>
-                          <item translatable="yes">Wyspy Turks i Caicos</item>
-                          <item translatable="yes">Tuvalu</item>
-                          <item translatable="yes">Uganda</item>
-                          <item translatable="yes">Ukraina</item>
-                          <item translatable="yes">Zjednoczone Emiraty Arabskie</item>
-                          <item translatable="yes">Wielka Brytania</item>
-                          <item translatable="yes">Stany Zjednoczone</item>
-                          <item translatable="yes">Dalekie Wyspy Mniejsze Stanów Zjednoczonych</item>
-                          <item translatable="yes">Urugwaj</item>
-                          <item translatable="yes">Uzbekistan</item>
-                          <item translatable="yes">Vanuatu</item>
-                          <item translatable="yes">Wenezuela</item>
-                          <item translatable="yes">Wietnam</item>
-                          <item translatable="yes">Brytyjskie Wyspy Dziewicze</item>
-                          <item translatable="yes">Wyspy Dziewicze Stanów Zjednoczonych.</item>
-                          <item translatable="yes">Wallis i Futuna</item>
-                          <item translatable="yes">Sachara Zachodnia</item>
-                          <item translatable="yes">Jemen</item>
-                          <item translatable="yes">Zambia</item>
-                          <item translatable="yes">Zimbabwe</item>
+                          <item id="AF" translatable="yes">Afganistan</item>
+                          <item id="AX" translatable="yes">Wyspy Alandzkie</item>
+                          <item id="AL" translatable="yes">Albania</item>
+                          <item id="DZ" translatable="yes">Algeria</item>
+                          <item id="AS" translatable="yes">Samoa Amerykańskie</item>
+                          <item id="AD" translatable="yes">Andorra</item>
+                          <item id="AO" translatable="yes">Angola</item>
+                          <item id="AI" translatable="yes">Anguilla</item>
+                          <item id="AQ" translatable="yes">Antarktyka</item>
+                          <item id="AG" translatable="yes">Antigua i Barbuda</item>
+                          <item id="AR" translatable="yes">Argentyna</item>
+                          <item id="AM" translatable="yes">Armenia</item>
+                          <item id="AW" translatable="yes">Aruba</item>
+                          <item id="AU" translatable="yes">Australia</item>
+                          <item id="AT" translatable="yes">Austria</item>
+                          <item id="AZ" translatable="yes">Azerbejdżan</item>
+                          <item id="BS" translatable="yes">Bahamy</item>
+                          <item id="BH" translatable="yes">Bahrajn</item>
+                          <item id="BD" translatable="yes">Bangladesz</item>
+                          <item id="BB" translatable="yes">Barbados</item>
+                          <item id="BY" translatable="yes">Białoruś</item>
+                          <item id="BE" translatable="yes">Belgia</item>
+                          <item id="BZ" translatable="yes">Belize</item>
+                          <item id="BJ" translatable="yes">Benin</item>
+                          <item id="BM" translatable="yes">Bermudy</item>
+                          <item id="BT" translatable="yes">Bhutan</item>
+                          <item id="BO" translatable="yes">Boliwia</item>
+                          <item id="BA" translatable="yes">Bośnia i Herzegowina</item>
+                          <item id="BW" translatable="yes">Botswana</item>
+                          <item id="BV" translatable="yes">Wyspa Bouveta</item>
+                          <item id="BR" translatable="yes">Brazylia</item>
+                          <item id="IO" translatable="yes">Brytyjskie Terytorium Oceanu Indyjskiego</item>
+                          <item id="BN" translatable="yes">Brunei</item>
+                          <item id="BG" translatable="yes">Bułgaria</item>
+                          <item id="BF" translatable="yes">Burkina Faso</item>
+                          <item id="BI" translatable="yes">Burundi</item>
+                          <item id="KH" translatable="yes">Kambodża</item>
+                          <item id="CM" translatable="yes">Kamerun</item>
+                          <item id="CA" translatable="yes">Kanada</item>
+                          <item id="CV" translatable="yes">Republika Zielonego Przylądka</item>
+                          <item id="KY" translatable="yes">Kajmany</item>
+                          <item id="CF" translatable="yes">Republika Środkowoafrykańska</item>
+                          <item id="TD" translatable="yes">Czad</item>
+                          <item id="CL" translatable="yes">Chile</item>
+                          <item id="CN" translatable="yes">Chiny</item>
+                          <item id="CX" translatable="yes">Wyspa Bożego Narodzenia</item>
+                          <item id="CC" translatable="yes">Wyspy Kokosowe</item>
+                          <item id="CO" translatable="yes">Kolumbia</item>
+                          <item id="KM" translatable="yes">Komory</item>
+                          <item id="CG" translatable="yes">Kongo</item>
+                          <item id="CD" translatable="yes">Demokratyczna Republika Konga</item>
+                          <item id="CK" translatable="yes">Wyspy Cooka</item>
+                          <item id="CR" translatable="yes">Kostaryka</item>
+                          <item id="CI" translatable="yes">Wybrzeże Kości Słoniowej</item>
+                          <item id="HR" translatable="yes">Chorwacja</item>
+                          <item id="CU" translatable="yes">Kuba</item>
+                          <item id="CY" translatable="yes">Cypr</item>
+                          <item id="CZ" translatable="yes">Czechy</item>
+                          <item id="DK" translatable="yes">Dania</item>
+                          <item id="DJ" translatable="yes">Dżibuti</item>
+                          <item id="DM" translatable="yes">Dominika</item>
+                          <item id="DO" translatable="yes">Republika Dominikany</item>
+                          <item id="EC" translatable="yes">Ekwador</item>
+                          <item id="EG" translatable="yes">Egipt</item>
+                          <item id="SV" translatable="yes">Salwador</item>
+                          <item id="GQ" translatable="yes">Gwinea Równikowa</item>
+                          <item id="ER" translatable="yes">Erytrea</item>
+                          <item id="EE" translatable="yes">Estonia</item>
+                          <item id="ET" translatable="yes">Etiopia</item>
+                          <item id="FK" translatable="yes">Falklandy/Malwiny</item>
+                          <item id="FO" translatable="yes">Wyspy Owcze</item>
+                          <item id="FJ" translatable="yes">Fidżi</item>
+                          <item id="FI" translatable="yes">Finlandia</item>
+                          <item id="FR" translatable="yes">Francja</item>
+                          <item id="GF" translatable="yes">Gujana Francuska</item>
+                          <item id="PF" translatable="yes">Polinezja Francuska</item>
+                          <item id="TF" translatable="yes">Francuskie Terytoria Południowe i Antarktyczne</item>
+                          <item id="GA" translatable="yes">Gabon</item>
+                          <item id="GM" translatable="yes">Gambia</item>
+                          <item id="GE" translatable="yes">Gruzja</item>
+                          <item id="DE" translatable="yes">Niemcy</item>
+                          <item id="GH" translatable="yes">Ghana</item>
+                          <item id="GI" translatable="yes">Gibraltar</item>
+                          <item id="EL" translatable="yes">Grecja</item>
+                          <item id="GL" translatable="yes">Grenlandia</item>
+                          <item id="GD" translatable="yes">Grenada</item>
+                          <item id="GP" translatable="yes">Gwadelupa</item>
+                          <item id="GU" translatable="yes">Guam</item>
+                          <item id="GT" translatable="yes">Gwatemala</item>
+                          <item id="GG" translatable="yes">Guernsey</item>
+                          <item id="GN" translatable="yes">Gwinea</item>
+                          <item id="GW" translatable="yes">Gwinea Bissau</item>
+                          <item id="GY" translatable="yes">Gujana</item>
+                          <item id="HT" translatable="yes">Haiti</item>
+                          <item id="HM" translatable="yes">Wyspy Heard i McDonalda</item>
+                          <item id="VA" translatable="yes">Watykan</item>
+                          <item id="HN" translatable="yes">Honduras</item>
+                          <item id="HK" translatable="yes">Hong Kong</item>
+                          <item id="HU" translatable="yes">Węgry</item>
+                          <item id="IS" translatable="yes">Islandia</item>
+                          <item id="IN" translatable="yes">Indie</item>
+                          <item id="ID" translatable="yes">Indonezja</item>
+                          <item id="IR" translatable="yes">Iran</item>
+                          <item id="IQ" translatable="yes">Irak</item>
+                          <item id="IE" translatable="yes">Irlandia</item>
+                          <item id="IM" translatable="yes">Wyspa Man</item>
+                          <item id="IL" translatable="yes">Izrael</item>
+                          <item id="IT" translatable="yes">Włochy</item>
+                          <item id="JM" translatable="yes">Jamajka</item>
+                          <item id="JP" translatable="yes">Japonia</item>
+                          <item id="JE" translatable="yes">Jersey</item>
+                          <item id="JO" translatable="yes">Jordania</item>
+                          <item id="KZ" translatable="yes">Kazachstan</item>
+                          <item id="KE" translatable="yes">Kenia</item>
+                          <item id="KI" translatable="yes">Kiribati</item>
+                          <item id="KP" translatable="yes">Korea Północna</item>
+                          <item id="KR" translatable="yes">Korea Południowa</item>
+                          <item id="XK" translatable="yes">Kosowo</item>
+                          <item id="KW" translatable="yes">Kuwejt</item>
+                          <item id="KG" translatable="yes">Kirgistan</item>
+                          <item id="LA" translatable="yes">Laos</item>
+                          <item id="LV" translatable="yes">Łotwa</item>
+                          <item id="LB" translatable="yes">Liban</item>
+                          <item id="LS" translatable="yes">Lesoto</item>
+                          <item id="LR" translatable="yes">Liberia</item>
+                          <item id="LY" translatable="yes">Libia</item>
+                          <item id="LI" translatable="yes">Liechtenstein</item>
+                          <item id="LT" translatable="yes">Litwa</item>
+                          <item id="LU" translatable="yes">Luksemburg</item>
+                          <item id="MO" translatable="yes">Makao</item>
+                          <item id="MK" translatable="yes">Macedonia</item>
+                          <item id="MG" translatable="yes">Madagascar</item>
+                          <item id="MW" translatable="yes">Malawi</item>
+                          <item id="MY" translatable="yes">Malezja</item>
+                          <item id="MV" translatable="yes">Maldiwy</item>
+                          <item id="ML" translatable="yes">Mali</item>
+                          <item id="MT" translatable="yes">Malta</item>
+                          <item id="MH" translatable="yes">Wyspy Marshalla</item>
+                          <item id="MQ" translatable="yes">Martynika</item>
+                          <item id="MR" translatable="yes">Mauretania</item>
+                          <item id="MU" translatable="yes">Mauritius</item>
+                          <item id="YT" translatable="yes">Majotta</item>
+                          <item id="MX" translatable="yes">Meksyk</item>
+                          <item id="FM" translatable="yes">Mikronezja</item>
+                          <item id="MD" translatable="yes">Mołdawia</item>
+                          <item id="MC" translatable="yes">Monako</item>
+                          <item id="MN" translatable="yes">Mongolia</item>
+                          <item id="MS" translatable="yes">Montserrat</item>
+                          <item id="MA" translatable="yes">Maroko</item>
+                          <item id="MZ" translatable="yes">Mozambik</item>
+                          <item id="MM" translatable="yes">Mjanma</item>
+                          <item id="NA" translatable="yes">Namibia</item>
+                          <item id="NR" translatable="yes">Nauru</item>
+                          <item id="NP" translatable="yes">Nepal</item>
+                          <item id="NL" translatable="yes">Holandia</item>
+                          <item id="AN" translatable="yes">Antyle Holenderskie</item>
+                          <item id="NC" translatable="yes">Nowa Kaledonia</item>
+                          <item id="NZ" translatable="yes">Nowa Zelandia</item>
+                          <item id="NI" translatable="yes">Nikaragua</item>
+                          <item id="NE" translatable="yes">Niger</item>
+                          <item id="NG" translatable="yes">Nigeria</item>
+                          <item id="NU" translatable="yes">Niue</item>
+                          <item id="NF" translatable="yes">Wyspa Norfolk</item>
+                          <item id="MP" translatable="yes">Mariany Północne</item>
+                          <item id="NO" translatable="yes">Norwegia</item>
+                          <item id="OM" translatable="yes">Oman</item>
+                          <item id="PK" translatable="yes">Pakistan</item>
+                          <item id="PW" translatable="yes">Palau</item>
+                          <item id="PS" translatable="yes">Okupowane Terytorium Palestyny</item>
+                          <item id="PA" translatable="yes">Panama</item>
+                          <item id="PG" translatable="yes">Papua Nowa Gwinea</item>
+                          <item id="PY" translatable="yes">Paragwaj</item>
+                          <item id="PE" translatable="yes">Peru</item>
+                          <item id="PH" translatable="yes">Filipiny</item>
+                          <item id="PN" translatable="yes">Pitcairn</item>
+                          <item id="PL" translatable="yes">Polska</item>
+                          <item id="PT" translatable="yes">Portugalia</item>
+                          <item id="PR" translatable="yes">Portoryko</item>
+                          <item id="QA" translatable="yes">Katar</item>
+                          <item id="RE" translatable="yes">Reunion</item>
+                          <item id="RO" translatable="yes">Rumunia</item>
+                          <item id="RU" translatable="yes">Federacja Rosyjska</item>
+                          <item id="RW" translatable="yes">Rwanda</item>
+                          <item id="SH" translatable="yes">Wyspa Świętej Heleny, Wyspa Wniebowstąpienia i Tristan da Cunha</item>
+                          <item id="KN" translatable="yes">Saint Kitts i Nevis</item>
+                          <item id="LC" translatable="yes">Saint Lucia</item>
+                          <item id="PM" translatable="yes">Saint-Pierre i Miquelon</item>
+                          <item id="VC" translatable="yes">Saint Vincent i Grenadyny</item>
+                          <item id="WS" translatable="yes">Samoa</item>
+                          <item id="SM" translatable="yes">San Marino</item>
+                          <item id="ST" translatable="yes">Wyspy Świętego Tomasza i Książęca</item>
+                          <item id="SA" translatable="yes">Arabia Saudyjska</item>
+                          <item id="SN" translatable="yes">Senegal</item>
+                          <item id="RS" translatable="yes">Serbia</item>
+                          <item id="ME" translatable="yes">Czarnogóra</item>
+                          <item id="SC" translatable="yes">Seszele</item>
+                          <item id="SL" translatable="yes">Sierra Leone</item>
+                          <item id="SG" translatable="yes">Singapur</item>
+                          <item id="SK" translatable="yes">Słowacja</item>
+                          <item id="SI" translatable="yes">Słowenia</item>
+                          <item id="SB" translatable="yes">Wyspy Salomona</item>
+                          <item id="SO" translatable="yes">Somalia</item>
+                          <item id="ZA" translatable="yes">Republika Południowej Afryki</item>
+                          <item id="GS" translatable="yes">Georgia Południowa i Sandwich Południowy</item>
+                          <item id="ES" translatable="yes">Hiszpania</item>
+                          <item id="LK" translatable="yes">Sri Lanka</item>
+                          <item id="SD" translatable="yes">Sudan</item>
+                          <item id="SR" translatable="yes">Surinam</item>
+                          <item id="SJ" translatable="yes">Svalbard i Jan Mayen</item>
+                          <item id="SZ" translatable="yes">Suazi</item>
+                          <item id="SE" translatable="yes">Szwecja</item>
+                          <item id="CH" translatable="yes">Szwajcaria</item>
+                          <item id="SY" translatable="yes">Syryjska Republika Arabska</item>
+                          <item id="TW" translatable="yes">Tajwan</item>
+                          <item id="TJ" translatable="yes">Tadżykistan</item>
+                          <item id="TZ" translatable="yes">Tanzania</item>
+                          <item id="TH" translatable="yes">Tajlandia</item>
+                          <item id="TL" translatable="yes">Timor Wschodni</item>
+                          <item id="TG" translatable="yes">Togo</item>
+                          <item id="TK" translatable="yes">Tokelau</item>
+                          <item id="TO" translatable="yes">Tonga</item>
+                          <item id="TT" translatable="yes">Trinidad i Tobago</item>
+                          <item id="TN" translatable="yes">Tunezja</item>
+                          <item id="TR" translatable="yes">Turcja</item>
+                          <item id="TM" translatable="yes">Turkmenistan</item>
+                          <item id="TC" translatable="yes">Wyspy Turks i Caicos</item>
+                          <item id="TV" translatable="yes">Tuvalu</item>
+                          <item id="UG" translatable="yes">Uganda</item>
+                          <item id="UA" translatable="yes">Ukraina</item>
+                          <item id="AE" translatable="yes">Zjednoczone Emiraty Arabskie</item>
+                          <item id="GB" translatable="yes">Wielka Brytania</item>
+                          <item id="US" translatable="yes">Stany Zjednoczone</item>
+                          <item id="UM" translatable="yes">Dalekie Wyspy Mniejsze Stanów Zjednoczonych</item>
+                          <item id="UY" translatable="yes">Urugwaj</item>
+                          <item id="UZ" translatable="yes">Uzbekistan</item>
+                          <item id="VU" translatable="yes">Vanuatu</item>
+                          <item id="VE" translatable="yes">Wenezuela</item>
+                          <item id="VN" translatable="yes">Wietnam</item>
+                          <item id="VG" translatable="yes">Brytyjskie Wyspy Dziewicze</item>
+                          <item id="VI" translatable="yes">Wyspy Dziewicze Stanów Zjednoczonych.</item>
+                          <item id="WF" translatable="yes">Wallis i Futuna</item>
+                          <item id="EH" translatable="yes">Sachara Zachodnia</item>
+                          <item id="YE" translatable="yes">Jemen</item>
+                          <item id="ZM" translatable="yes">Zambia</item>
+                          <item id="ZW" translatable="yes">Zimbabwe</item>
                         </items>
+                        <signal name="changed" handler="on_input_buyer_country_changed" object="input_product1_vat_rate" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">3</property>
@@ -1110,7 +1112,7 @@
                         <property name="margin_bottom">5</property>
                         <property name="hexpand">False</property>
                         <property name="width_chars">7</property>
-                        <property name="text" translatable="yes">0</property>
+                        <property name="text" translatable="yes">-</property>
                         <signal name="changed" handler="on_input_product1_vat_rate_changed" object="input_product1_netto" swapped="no"/>
                       </object>
                       <packing>
@@ -1289,7 +1291,7 @@
                         <property name="margin_bottom">5</property>
                         <property name="hexpand">False</property>
                         <property name="width_chars">7</property>
-                        <property name="text" translatable="yes">0</property>
+                        <property name="text" translatable="yes">-</property>
                         <signal name="changed" handler="on_input_product2_vat_rate_changed" object="input_product2_netto" swapped="no"/>
                       </object>
                       <packing>
@@ -1467,7 +1469,6 @@
                         <property name="margin_bottom">5</property>
                         <property name="editable">False</property>
                         <property name="width_chars">7</property>
-                        <property name="text" translatable="yes">0</property>
                       </object>
                       <packing>
                         <property name="left_attach">5</property>
